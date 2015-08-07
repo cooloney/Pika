@@ -1,0 +1,58 @@
+<template name="detail">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">详情</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <!-- <img src="http://www.adweek.com/files/2015_Jun/shot-on-iphone6-3.jpg" style="width:100%">
+      <div>
+        <h3>take</h3>
+      </div>
+
+        <span >{{description}}</span>
+        <span >{{photographer}}</span>
+        <div class="card-body card-padding">
+            <p class="lead">{{text}}</p>
+            {{#with picture}}
+            <img src="{{this.url}}" alt="{{this.name}}" width=240>
+            {{/with}}
+        </div>
+         -->
+      {{#with onePhoto}}
+
+      <div class="imgwrap">
+        {{#with oneImage}}
+          <img src="{{this.url}}" alt="{{this.name}}" class="detailimg">
+        {{/with}}        
+      </div>
+      
+      <div class="infowrap">
+        <span class="spantitle">Photographer<br>
+          <h3>{{photographer}}</h3>
+        </span>
+        <br>
+        <span class="spantitle">Description<br><h3>{{description}}</h3></span>
+        <br>
+        <span class="spantitle">Camera Model<br><h3>{{cameraModel}}</h3></span>
+        <br>
+        <span class="spantitle">Location<br><h3>{{location}}</h3></span>
+        <br>
+        <span class="spantitle">Popular Points<br><h3>{{score}}</h3></span>
+      </div>
+
+      <div class="button2">
+            <button class="btn1 like">{{> ionIcon icon='sad'}}</button>
+            <button class="btn1 dislike">{{> ionIcon icon='happy'}}</button>
+      </div>
+      
+      {{/with}}
+        
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

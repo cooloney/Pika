@@ -1,0 +1,41 @@
+.des_area{
+	height: 100px !important;
+	vertical-align: top !important;
+}
+
+#new-post > label:nth-child(1){
+	height: 100px !important;
+}
+
+button.button.icon.button-positive{
+	bottom: 0px;
+	width: 100%;
+	z-index: 111;
+	background-color:#FB8C00;
+	border-color: #FB8C00;
+	position: absolute;
+}
+
+.form-group.file-upload{
+	visibility: hidden;
+	height: 100px;
+}
+
+.form-group.file-upload::after{
+	content: "\f2d3";
+	font-family: ionicons;
+	display: block;
+	width: 60px;
+	height: 60px;
+	background-color: rgba(0,0,0,0);
+	border-radius: 60px;
+	border: 2px solid #ff4081;
+	visibility: visible;
+	margin-top: -15px;
+	margin-left: 90px;
+	z-index: 111;
+	font-size: 40px;
+	color: #ff4081;
+	padding-left: 11px;
+	line-height: 55px;
+}

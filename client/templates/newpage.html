@@ -1,0 +1,37 @@
+<template name="newpage">
+
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">新建</h1>
+  {{/contentFor}}
+
+
+{{#ionView}}
+    {{#ionContent}}
+
+		{{#autoForm collection="Photos" id="new-post" type="insert" buttonContent="Create"}}
+		
+		{{> afQuickField name="picture"}}
+
+		{{> afQuickField name="photographer"}}
+
+		{{> afQuickField name="description"}}
+
+		{{> afQuickField name="cameraModel"}}
+
+		{{> afQuickField name="location"}}
+
+		
+
+		<div class="button-bar">
+		<button type="submit" class="button icon button-positive">确认</button>
+		</div>
+		{{/autoForm}}
+
+    
+    {{/ionContent}}
+  {{/ionView}}
+</template>

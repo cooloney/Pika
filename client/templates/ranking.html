@@ -1,0 +1,27 @@
+<template name="ranking">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+  {{/contentFor}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Photo ranking</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionSlideBox}}
+        {{#ionSlide class="light-bg"}}
+          <h3>1st</h3>
+          <img src="http://www.adweek.com/files/2015_Jun/shot-on-iphone6-3.jpg" style="width:100%">
+        {{/ionSlide}}
+        {{#ionSlide class="light-bg"}}
+          <h3>2nd</h3>
+          <img src="http://petapixel.com/assets/uploads/2015/03/014_b.o-se.jpg" style="width:100%">
+        {{/ionSlide}}
+        {{#ionSlide class="light-bg"}}
+          <h3>3rd</h3>
+          <img src="http://petapixel.com/assets/uploads/2015/03/001_a.almalki.jpg" style="width:100%">
+        {{/ionSlide}}
+      {{/ionSlideBox}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>
