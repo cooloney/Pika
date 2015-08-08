@@ -8,12 +8,12 @@ Template.homepage.helpers({
 
 Template.homepage.events({
 
-  'click .like': function(){
+  'click .dislike': function(){
   	var id = this._id;
     Photos.update({_id:id}, {$inc: {score: -1} });
 	},
 
-	'click .dislike': function(){
+	'click .like': function(){
   	var id = this._id;
     Photos.update({_id:id}, {$inc: {score: 1} });
 	},
