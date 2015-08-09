@@ -104,14 +104,27 @@
       
         <div class="section">
           <a href="/detail/{{_id}}">
-          {{#with oneImage}}
-              <img src="{{this.url}}" alt="{{this.name}}" width=240 class="rankImg">
-          {{/with}}
+            {{#with oneImage}}
+              {{#if isVideo}}
+                  <video width = "320" height ="240" preload controls>
+                      <source src="{{this.url}}" alt="{{this.name}}">
+                  </video>
+              {{else}}
+                  {{#if isImage}}
+                   <img src="{{this.url}}" alt="{{this.name}}" width=240 class="rankImg">
+                    <!--<img src="{{this.url}}" alt="{{this.name}}" class="photoer user">-->
+                  {{/if}}
+              {{/if}}
+         {{/with}}
           </a>
           <div class="title">
-          {{#with oneImage}}
-            <img src="{{this.url}}" alt="{{this.name}}" class="photoer user">
-          {{/with}}
+
+            {{#with oneImage}}
+              {{#if isImage}}
+                  <!--<img src="{{this.url}}" alt="{{this.name}}" width=240 class="rankImg">-->
+                  <img src="{{this.url}}" alt="{{this.name}}" class="photoer user">
+              {{/if}}
+            {{/with}}
             <span class="name1">{{photographer}}</span><br>
             <span class="des1">{{description}}</span>
           </div>
@@ -128,17 +141,14 @@
       
       {{/each}}
 
- <!--  {{> loginButtons}} -->
-  
-<!-- 判定是否登录 -->
-  <!-- {{#if currentUser}}
-  <p>
-    Welcome, {{userId}}
-  </p>
-  {{else}}
-  Please Login
-  {{> atForm}}
-  {{/if}} -->
+
+  <!--<p>-->
+    <!--Welcome, {{userId}}-->
+  <!--</p>-->
+  <!--{{else}}-->
+  <!--Please Login-->
+  <!--{{> atForm}}-->
+  <!--{{/if}} &ndash;&gt;-->
 
       </div>
     {{/ionContent}}

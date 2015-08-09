@@ -13,7 +13,8 @@
     {{#ionContent}}
 
 		{{#autoForm collection="Photos" id="new-post" type="insert" buttonContent="Create"}}
-		
+
+
 		{{> afQuickField name="picture"}}
 
 		{{> afQuickField name="photographer"}}
@@ -24,12 +25,28 @@
 
 		{{> afQuickField name="location"}}
 
-		
 
+        {{/autoForm}}
+        <!--<div class="section">-->
+        <!--<a href="/detail/{{_id}}">-->
+            <!--{{#with oneImage}}-->
+            <!--{{#if isVideo}}-->
+            <!--<video width = "320" height ="240" preload controls>-->
+            <!--<source src="{{this.url}}" alt="{{this.name}}">-->
+            <!--</video>-->
+                <!--{{else}}-->
+                <!--{{#if isImage}}-->
+                <!--<img src="{{this.url}}" alt="{{this.name}}" width=240 class="rankImg">-->
+                <!--&lt;!&ndash;<img src="{{this.url}}" alt="{{this.name}}" class="photoer user">&ndash;&gt;-->
+                    <!--{{/if}}-->
+                <!--{{/if}}-->
+            <!--{{/with}}-->
+        <!--</a>-->
+        <!--</div>-->
 		<div class="button-bar">
 		<button type="submit" class="button icon button-positive">确认</button>
 		</div>
-		{{/autoForm}}
+
 
     
     {{/ionContent}}
