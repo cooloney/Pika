@@ -42,6 +42,10 @@ Router.route('/detail/:_id', {
   }
 });
 
+Router.route('/userAccounts', {
+  name: 'userAccounts'
+});
+
 Router.route('/decision', {
   name: 'decision'
 });
