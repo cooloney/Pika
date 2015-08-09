@@ -27,9 +27,20 @@
 
       <div class="imgwrap">
         {{#with oneImage}}
-          <img src="{{this.url}}" alt="{{this.name}}" class="detailimg">
-        {{/with}}        
-      </div>
+          <!--<img src="{{this.url}}" alt="{{this.name}}" class="detailimg">-->
+
+            {{#if isVideo}}
+                <video width = "320" height ="240" preload controls>
+                    <source src="{{this.url}}" alt="{{this.name}}">
+                </video>
+            {{else}}
+                {{#if isImage}}
+                    <img src="{{this.url}}" alt="{{this.name}}" width=240 class="rankImg">
+                    <!--<img src="{{this.url}}" alt="{{this.name}}" class="photoer user">-->
+                {{/if}}
+            {{/if}}
+        {{/with}}
+        </div>
       
       <div class="infowrap">
         <span class="spantitle">Photographer<br>

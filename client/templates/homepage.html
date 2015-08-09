@@ -58,7 +58,15 @@
         <div class="section">
           <a href="/detail/{{_id}}">
           {{#with oneImage}}
-              <img src="{{this.url}}" alt="{{this.name}}" width=240 class="rankImg">
+               {{#if isVideo}}
+                   <video width = "320" height ="240" preload controls>
+                       <source src="{{this.url}}" alt="{{this.name}}">
+                   </video>
+               {{else}}
+                   {{#if isImage}}
+                    <img src="{{this.url}}" alt="{{this.name}}" width=240 class="rankImg">
+                   {{/if}}
+               {{/if}}
           {{/with}}
           </a>
           <div class="title">
