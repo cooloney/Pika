@@ -53,6 +53,9 @@ iron:location@1.0.9
 iron:middleware-stack@1.0.9
 iron:router@1.0.9
 iron:url@1.0.9
+jparker:crypto-core@0.1.0
+jparker:crypto-md5@0.1.1
+jparker:gravatar@0.3.1
 jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
@@ -99,6 +102,7 @@ underscore@1.0.3
 underscorestring:underscore.string@3.0.3_1
 url@1.0.4
 useraccounts:core@1.11.1
+useraccounts:ionic@1.11.1
 useraccounts:materialize@1.11.1
 webapp@1.2.0
 webapp-hashing@1.0.3

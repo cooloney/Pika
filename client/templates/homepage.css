@@ -116,6 +116,12 @@ img.photoer.user{
 	border-radius: 50px;
 }
 
+img.avatar.user{
+	background-color: #fff;
+	border-radius: 50px;
+	float: right;
+}
+
 span.name1{
 	margin-left:10px;
 	font-size: 32px;

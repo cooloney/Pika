@@ -12,93 +12,46 @@
 </head>
 
 <template name="homepage">
+
+
+        {{#if currentUser}}
+            {{#contentFor "headerButtonLeft"}}
+            <a href="{{pathFor 'userAccounts'}}" class="button button-clear" data-nav-direction="back">
+            <img src="{{avatarUrl}}" class="avatar user">  {{username}}
+        </a>
+            {{/contentFor}}
+
+        {{else}}
+            {{#contentFor "headerButtonLeft"}}
+        <a href="{{pathFor 'userAccounts'}}" class="button button-clear" data-nav-direction="back">
+            {{> ionIcon icon='person'}}
+        </a>
+            {{/contentFor}}
+        {{/if}}
+
+
   {{#contentFor "headerTitle"}}
     <h1 class="title">首页</h1>
   {{/contentFor}}
 
-  {{#contentFor "headerButtonRight"}}
-    <a href="{{pathFor 'newpage'}}" class="button button-clear" data-nav-direction="back">
-          {{> ionIcon icon='plus-circled'}}
-    </a>
-  {{/contentFor}}
+    {{#if currentUser}}
+        {{#contentFor "headerButtonRight"}}
+            <a href="{{pathFor 'newpage'}}" class="button button-clear" data-nav-direction="back">
+                {{> ionIcon icon='plus-circled'}}
+            </a>
+        {{/contentFor}}
+    {{/if}}
 
   {{#ionView}}
     {{#ionContent}}
       <div class="welcome">
         <h2>哟&nbsp;来啦</h2>
         <p>
-          欢迎回来&nbsp;在下已恭候多时
+          欢迎回来&nbsp; {{username}}
         </p>
-        <img src="/img/me.png" class="userImg">
       </div>
       <div class="ranking" id="rankDiv">
 
-       <!--  {{#each photo}}
-
-                   <a href="/detail/{{_id}}">
-
-                    {{#with oneImage}}
-                      <img src="{{this.url}}" alt="{{this.name}}" width=240>
-                    {{/with}}
-
-                    <li>
-                      <span >{{description}}</span>
-                      <span >{{photographer}}</span>
-                      <span >{{picture}}</span>
-
-                    </li>
-                   </a>
-       {{/each}}
- -->
-
-        <!-- <div class="section">
-          <img src="/img/1.jpg" class="rankImg">
-          <div class="title">
-            <img src="/img/p1.jpg" class="photoer">
-            <span class="name1">Chris Cooper</span><br>
-            <span class="des1">This is an awesome photo!</span>
-          </div>
-          <div class="button1">
-            <button class="rankbtn">{{> ionIcon icon='trophy'}}
-              <h5>16</h5>
-            </button>
-            <button class="btn">{{> ionIcon icon='sad'}}</button>
-            <button class="btn dislike">{{> ionIcon icon='happy'}}</button>
- 
-          </div>
-        </div>
-
-        <div class="section">
-          <img src="/img/2.jpg" class="rankImg after">
-          <div class="title">
-            <img src="/img/p2.png" class="photoer">
-            <span class="name1">Nancy Lee</span><br>
-            <span class="des1">This is a more awesome photo!</span>
-          </div>
-          <div class="button1">
-            <button class="rankbtn">{{> ionIcon icon='trophy'}}
-              <h5>12</h5>
-            </button>
-            <button class="btn">{{> ionIcon icon='sad'}}</button>
-            <button class="btn dislike">{{> ionIcon icon='happy'}}</button>
-          </div>
-        </div>
-
-        <div class="section">
-          <img src="/img/3.jpg" class="rankImg after">
-          <div class="title">
-            <img src="/img/p3.png" class="photoer">
-            <span class="name1">James Blunt</span><br>
-            <span class="des1">This is the awesome photo!</span>
-          </div>
-          <div class="button1">
-            <button class="rankbtn">{{> ionIcon icon='trophy'}}
-              <h5>9</h5>
-            </button>
-            <button class="btn">{{> ionIcon icon='sad'}}</button>
-            <button class="btn dislike">{{> ionIcon icon='happy'}}</button>
-          </div>
-        </div> -->
 
       {{#each photo}}
       
@@ -109,9 +62,7 @@
           {{/with}}
           </a>
           <div class="title">
-          {{#with oneImage}}
-            <img src="{{this.url}}" alt="{{this.name}}" class="photoer user">
-          {{/with}}
+            <img src="{{avatarUrl}}" class="photoer user">
             <span class="name1">{{photographer}}</span><br>
             <span class="des1">{{description}}</span>
           </div>
@@ -125,20 +76,8 @@
           </div>
         </div>
       
-      
-      {{/each}}
 
- <!--  {{> loginButtons}} -->
-  
-<!-- 判定是否登录 -->
-  <!-- {{#if currentUser}}
-  <p>
-    Welcome, {{userId}}
-  </p>
-  {{else}}
-  Please Login
-  {{> atForm}}
-  {{/if}} -->
+      {{/each}}
 
       </div>
     {{/ionContent}}

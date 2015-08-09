@@ -25,14 +25,14 @@ Photos.attachSchema(new SimpleSchema({
     }
   },
 
-  photographer: {
-    type: String,
-    max: 50,
-    autoform: {
-      'label-type': 'stacked',
-      placeholder: "photographer"
-    }
-  },
+  //photographer: {
+  //  type: String,
+  //  max: 50,
+  //  autoform: {
+  //    'label-type': 'stacked',
+  //    placeholder: "photographer"
+  //  }
+  //},
 
    cameraModel: {
     type: String,
