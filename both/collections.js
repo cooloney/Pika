@@ -68,4 +68,36 @@ Photos.attachSchema(new SimpleSchema({
     }
   },
 
+    loc: {
+        type: Object,
+        optional: true
+    },
+    "loc.lat": {
+        type: Number,
+        defaultValue: 0.1,
+        decimal:true,
+    },
+    "loc.lng": {
+        type: Number,
+        defaultValue: 0.1,
+        decimal:true,
+    }
+
+
 }));
+
+if (Meteor.isServer) {
+    Photos._ensureIndex({
+        'loc': '2d'
+    });
+}
+
+
+if (Meteor.isClient) {
+
+    Photos.before.insert(function (userId, doc) {
+        var pos = Session.get('keyLocation');
+        console.log(pos);
+        doc.loc = pos;
+    });
+}
