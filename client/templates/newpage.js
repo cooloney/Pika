@@ -1,3 +1,5 @@
+
+
 AutoForm.hooks({
   'new-post': {
     onSuccess: function (operation, result, template) {
@@ -9,5 +11,6 @@ AutoForm.hooks({
     onError: function(operation, error, template) {
       console.log(error);
     }
+
   }
 });

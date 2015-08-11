@@ -1,3 +1,5 @@
+
+
 Template.homepage.helpers({
 	oneImage: function () {
         var id = this.picture;

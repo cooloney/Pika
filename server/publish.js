@@ -4,6 +4,22 @@ Meteor.publishComposite('myApps', function() {
             // Find posts made by user. Note arguments for callback function
             // being used in query.
             return Photos.find({},{sort: {score: -1}, limit:6});
+            //var l;
+            //console.log('in publish');
+            //console.log(l);
+            //l = Session.get('keyLocation');
+            //if (l) {
+            //    return Photos.find({
+            //        "loc": {
+            //            $near: l,
+            //            $maxDistance: 300 / 111.12
+            //        }
+            //    }, {
+            //        sort: {
+            //            time: -1
+            //        }
+            //    });
+            //}
         },
         children: [
             {

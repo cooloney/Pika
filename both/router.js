@@ -8,14 +8,38 @@ Router.route('/', {
     return Meteor.subscribe('myApps')
   },
 
-  data: function(){ 
-    return {
-      photo: Photos.find({},{sort: {score: -1}, limit:6})
-    };
+  data: function() {
+    //return {
+    //  photo: Photos.find({}, {sort: {score: -1}, limit: 6})
+    //};
+    console.log('in data');
+
+          //latLng=Geolocation.latLng();
+          var latLng;
+          latLng = Session.get('keyLocation');
+          if (latLng) {
+            console.log('lat in data is '+latLng.lat);
+            //Session.set('keyLocation', latLng);
+            // return {photo: Photos.find({},{sort: {score: -1}, limit:6})};
+            return { photo: Photos.find({
+                "loc": {$near: latLng,
+                  $maxDistance: 3 / 111.12
+                }}, {sort: {time: -1}})};
+          }
   },
 
-  action: function(){
-    this.render('homepage')
+
+  action: function() {
+    var latLng;
+    latLng = Session.get('keyLocation');
+    if (latLng) {
+
+      console.log('going to render homepage');
+      return this.render('homepage');
+    } else {
+      console.log('going to render loading page');
+      return this.render('loading');
+    }
   }
 });
 
